@@ -1,0 +1,230 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    --primaryGradient: linear-gradient(93.12deg, #d69508 0.52%, #bb9f62 100%);
+    --secondaryGradient: linear-gradient(268.91deg, #e7c88e -2.14%, #f3960a 99.69%);
+    --primaryBoxShadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+    --secondaryBoxShadow: 0px -10px 15px rgba(0, 0, 0, 0.1);
+    --primary: #581B98;
+}
+
+/* CHATBOX */
+.chatbox {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+}
+
+/* CONTENT IS CLOSE/OPEN */
+.chatbox__support {
+    display: flex;
+    flex-direction: column;
+    background: #dfd1b6;
+    width: 400px;
+    height: 700px;
+    z-index: -123456;
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+    border-radius: 25px;
+}
+
+.chatbox--active {
+    transform: translateY(-40px);
+    z-index: 123456;
+    opacity: 1;
+}
+
+/* BUTTON */
+.chatbox__button {
+    text-align: right;
+}
+
+.send__button {
+    padding: 9px;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+/* HEADER */
+.chatbox__header {
+    position: sticky;
+    top: 0;
+    background: var(--primaryGradient);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 1px 1px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: var(--primaryBoxShadow);
+}
+
+.chatbox__heading--header,
+.chatbox__description--header {
+    font-weight: bold;
+    color: white;
+}
+
+.chatbox__heading--header {
+    font-size: 17px;
+}
+
+.chatbox__description--header {
+    font-size: 13px;
+    color: rgb(0, 0, 0);
+}
+
+/* MESSAGES */
+.chatbox__messages {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column-reverse;
+    overflow-y: auto;
+    height: 100%;
+}
+
+.messages__item {
+    background: orange;
+    max-width: 60.6%;
+    width: fit-content;
+}
+
+.messages__item--operator {
+    margin-left: auto;
+}
+
+.messages__item--visitor {
+    margin-right: auto;
+}
+
+.chatbox__messages {
+    padding: 0 20px;
+}
+
+.messages__item {
+    margin-top: 10px;
+    background: #ffffff;
+    padding: 8px 12px;
+    max-width: 70%;
+}
+
+.messages__item--visitor,
+.messages__item--typing {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.messages__item--operator {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background: var(--primary);
+    color: white;
+}
+
+
+/* FOOTER */
+.chatbox__footer {
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 10px;
+    background: var(--secondaryGradient);
+    box-shadow: var(--secondaryBoxShadow);
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    margin-top: 20px;
+}
+
+.chatbox__footer input {
+    width: 80%;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 30px;
+    text-align: left;
+}
+
+.chatbox__send--footer {
+    color: rgb(0, 0, 0);
+    border: 1px solid #000000;
+    border-radius: 15px;
+    background: rgb(233, 164, 35);
+    font-weight: bold;
+}
+
+.chatbox__options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.chatbox__option-line {
+    margin-top: 6px;
+}
+
+.chatbox__option-button {
+    padding: 5px 10px;
+    background-color: #e2c795;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    font-size: 13px;
+    color: #000000;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Refresh option */
+.chatbox__refresh-button {
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+    border: #000000;
+    margin-bottom: 11px;
+    margin-top: 11px;
+    text-decoration: underline; /* Add this line to apply underline */
+}
+
+/* User message bubble */
+.messages__item--visitor {
+    background: #ffffff; /* Customize the color */
+    border-radius: 20px;
+    border-top-left-radius: 0;
+}
+
+/* Chatbot message bubble */
+.messages__item--operator {
+    background: #6a048a; /* Customize the color */
+    border-radius: 20px;
+    border-top-right-radius: 0;
+}
+
+.messages__item--typing {
+    background: #F0F0F0; /* Same as chatbot bubble color */
+    border-radius: 20px;
+}
+
+/* Chatbot icon */
+.chatbot__icon--inside{
+    height: 4rem; /* Adjust the height as needed */
+    width: 4.5rem; /* Adjust the width as needed */
+    padding-right: 0.5rem
+  }
+  
+.chatbot__icon--outside{
+    height: 4rem; /* Adjust the height as needed */
+    width: 4.5rem; /* Adjust the width as needed */
+} 
