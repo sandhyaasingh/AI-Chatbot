@@ -1,5 +1,6 @@
 # AI Chatbot using Deep Learning and NLP  
 This project implements an AI chatbot using Python, NLTK, and a Feedforward Neural Network. It includes intent recognition, API integrations, and a front-end interface.
+
 ## Features  
 - Intent recognition using NLP.  
 - Feedforward Neural Network for predicting user intents.  
